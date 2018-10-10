@@ -1,0 +1,11 @@
+{
+    "name": "nestjs-firbase-cloud-functions",
+    "version": "1.0.0",
+    "scripts": {
+        "serve": "firebase serve --only functions,hosting",
+        "deploy": "firebase deploy"
+    },
+    "dependencies": {
+
+    }
+}
