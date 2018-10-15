@@ -2,7 +2,13 @@
   "compilerOptions": {
     "lib": ["es6"],
     "module": "commonjs",
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
     "noImplicitReturns": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "outDir": "lib",
     "sourceMap": true,
     "target": "es6"
@@ -10,5 +16,9 @@
   "compileOnSave": true,
   "include": [
     "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
   ]
 }

@@ -50,7 +50,7 @@
 
     // Functions must either be handled directly (e.g. with a catch() handler) or returned to another function.
     // This is a major source of errors in Cloud Functions and the team strongly recommends leaving this rule on.
-    "no-floating-promises": true,
+    "no-floating-promises": false,
 
     // Do not allow any imports for modules that are not in package.json. These will almost certainly fail when
     // deployed.
@@ -114,9 +114,7 @@
     "prefer-const": {"severity": "warning"},
 
     // Multi-line object literals and function calls should have a trailing comma. This helps avoid merge conflicts.
-    "trailing-comma": {"severity": "warning"},
-
-    "experimentalDecorators": true
+    "trailing-comma": {"severity": "warning"}
   },
 
   "defaultSeverity": "error"
