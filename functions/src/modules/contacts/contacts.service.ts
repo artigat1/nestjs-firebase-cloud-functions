@@ -13,7 +13,7 @@ export class ContactsService {
             .then(snapshot => {
                 const contacts: Contact[] = [];
                 snapshot.forEach(contact => {
-                    contacts.push(this.mapResponse(contact.data()));
+                    contacts.push(this.mapResponse(contact.data(), contact.id));
                 });
                 return contacts;
             })
@@ -38,10 +38,9 @@ export class ContactsService {
             });
     }
 
-    private mapResponse(data: any): Contact {
-        console.log('data to map', data);
+    private mapResponse(data: any, id: string): Contact {
         return {
-            id: data.id,
+            id: id,
             firstName: data.firstName,
             lastName: data.lastName,
             email: data.email
