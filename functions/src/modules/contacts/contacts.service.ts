@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { Contact } from './interfaces/contact.interface';
-import db from '../../db'
+import { Contact } from './dto/contact.model';
+import db from '../../db';
 
 const contactsCollection = 'contacts';
 
@@ -9,6 +9,7 @@ export class ContactsService {
 
     get(): Promise<Contact[]> {
         return db.collection(contactsCollection)
+            .orderBy('email', 'asc')
             .get()
             .then(snapshot => {
                 const contacts: Contact[] = [];
@@ -20,6 +21,17 @@ export class ContactsService {
             .catch(error => {
                 this.handleError(error);
                 return [];
+            });
+    }
+
+    getById(id: string): Promise<Contact> {
+        return db.collection(contactsCollection)
+            .doc(id)
+            .get()
+            .then(doc => this.mapResponse(doc.data(), doc.id))
+            .catch(error => {
+                this.handleError(error);
+                return null;
             });
     }
 

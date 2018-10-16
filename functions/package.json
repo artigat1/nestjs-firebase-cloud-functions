@@ -18,6 +18,8 @@
         "@nestjs/testing": "^5.3.11",
         "@nestjs/websockets": "^5.3.11",
         "body-parser": "^1.18.3",
+        "class-transformer": "^0.1.9",
+        "class-validator": "^0.9.1",
         "express": "^4.16.3",
         "firebase-admin": "~6.0.0",
         "firebase-functions": "^2.0.3",

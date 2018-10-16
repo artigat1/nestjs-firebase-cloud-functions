@@ -4,11 +4,5 @@
     "scripts": {
         "serve": "firebase serve --only functions,hosting",
         "deploy": "firebase deploy"
-    },
-    "dependencies": {
-        "body-parser": "^1.18.3"
-    },
-    "devDependencies": {
-        "@types/body-parser": "^1.17.0"
     }
 }
