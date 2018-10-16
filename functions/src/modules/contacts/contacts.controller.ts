@@ -99,7 +99,7 @@ export class ContactsController {
     })
     @HttpCode(HttpStatus.CREATED)
     @Post()
-    @UsePipes(new ContactValidationPipe({ skipMissingProperties: true }))
+    @UsePipes(new ContactValidationPipe())
     async createContact(@Body() contact: Contact) {
         return this.contactsService
             .create(contact)
